@@ -1,0 +1,258 @@
+.sec1 {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.yuy {
+    background-image:linear-gradient(to bottom, rgb(19, 18, 18),rgba(66, 63, 63, 0.425) 50%), url(/background/istockphoto-1424987910-612x612.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 65vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tag {
+    color: white;
+    font-size: 38px;
+    margin: 15px;
+    font-family: jay;
+}
+
+        /* Style for dropdown wrapper */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown button styling */
+        .dropdown-button {
+            cursor: pointer;
+            background-color: white;
+            margin: 30px;
+        }
+
+        /* Dropdown content styling */
+        .dropdown-content {
+            flex-direction: column;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            z-index: 1;
+            right: 0;
+            width: 28vh;
+            height: 100vh;
+        }
+
+        /* Cancel button styling */
+        .cancle-button {
+            cursor: pointer;
+            padding: 5px;
+            justify-content: right;
+            display: flex;
+            margin: 10px;
+        }
+
+        .cancle-button img {
+            width: 30px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        @font-face {
+            font-family: jay;
+            src: url(/static/Platypi-SemiBoldItalic.ttf);
+        }
+
+        @font-face {
+            font-family: text;
+            src: url(/static/Platypi-Regular.ttf);
+        }
+
+        .iccc {
+            margin-top: 30px;
+        }
+
+        .iccc img {
+            background-color: black;
+            width: 50px;
+            margin: 15px;
+            border-radius: 15px;
+        }
+
+        .Vision {
+            font-size: 18px;
+            padding: 8px;
+            color: #888686;
+            font-family: text;
+            margin-top: 20px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            font-family: jay;
+            padding: 8px;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 22px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+.info .whatsapp {
+    font-size: 16px;
+}
+
+.info .mail {
+    font-size: 16px
+}
+
+.intro {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    margin-top: 5%;
+}
+
+@font-face {
+    font-family: fnt;
+    src: url(/static/Inconsolata_SemiCondensed-ExtraLight.ttf);
+}
+
+.int {
+    font-family: fnt;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.slider {
+    width: 98%;
+}
+
+.duction {
+    margin-bottom: 15px;
+    font-family: gug;
+    color: black;
+    font-weight: bolder;
+    font-size: 40px;
+    text-shadow: 2px 2px gray;
+}
+
+.uss {
+    font-family: gug;
+    font-size: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.about-content {
+    padding: 20px;
+}
+
+.gr {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+@font-face {
+    font-family: gug;
+    src: url(/static/Inconsolata_UltraCondensed-ExtraLight.ttf);
+}
+
+.slides {
+    display: flex;
+    font-family: jay;
+    transition: transform 0.5s ease-in-out;
+}
+
+.sliddes {
+    display: flex;
+    font-family: jay;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.slidde {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.prev {
+    margin-right: 70px;
+}
+
+.bint {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.next {
+    margin-right: 20px;
+}
+
+.prev, .next {
+    font-family: jay;
+    width: 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    border: none;
+    height: 30px;
+}
+.priv, .nect {
+    font-family: jay;
+    width: 100px;
+    background-color: transparent;
+    color: black;
+    font-size: 24px;
+    border: none;
+    height: 30px;
+}
+
+
+.impacts div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    text-align: center;
+    padding: 15px 0 15px 0;
+}
+
+.impacts div span {
+    font-size: 42px;
+    margin-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
