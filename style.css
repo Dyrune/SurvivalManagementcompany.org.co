@@ -43,14 +43,13 @@ body {
         /* Dropdown content styling */
         .dropdown-content {
             flex-direction: column;
-            position: absolute;
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             padding: 10px;
             z-index: 1;
             right: 0;
             width: 28vh;
-            height: 100vh;
+            height: 100%;
         }
 
         /* Cancel button styling */
