@@ -87,7 +87,65 @@ document.addEventListener('DOMContentLoaded', () => {
     // Optionally, auto-slide every 3 seconds
     setInterval(() => {
         showSlide(currentIndex + 1);
-    }, 3000);
+    }, 10000);
     
     
     })
+    document.addEventListener('DOMContentLoaded', () => {
+        let index = 0;
+        const videos = document.querySelector('.videos');
+        const videoElements = Array.from(videos.children);
+        const videoCount = videoElements.length;
+    
+        const updateCarousel = () => {
+            const offset = -index * 100;
+            videos.style.transform = `translateX(${offset}%)`;
+            playCurrentVideo();
+        };
+    
+        const playCurrentVideo = () => {
+            videoElements.forEach((video, idx) => {
+                if (idx === index) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        };
+    
+        const nextVideo = () => {
+            index = (index + 1) % videoCount;
+            updateCarousel();
+        };
+    
+        const prevVideo = () => {
+            index = (index - 1 + videoCount) % videoCount;
+            updateCarousel();
+        };
+    
+        const handleScroll = () => {
+            const currentVideo = videoElements[index];
+            const rect = currentVideo.getBoundingClientRect();
+            const inViewport = rect.left < window.innerWidth && rect.right > 0;
+            if (inViewport) {
+                currentVideo.play();
+            } else {
+                currentVideo.pause();
+            }
+        };
+    
+        const handleVideoEnd = () => {
+            nextVideo();
+        };
+    
+        videoElements.forEach(video => {
+            video.addEventListener('ended', handleVideoEnd);
+        });
+    
+        window.addEventListener('resize', handleScroll);
+        window.addEventListener('scroll', handleScroll);
+    
+        // Initial call to handle video visibility
+        handleScroll();
+    });
+    
