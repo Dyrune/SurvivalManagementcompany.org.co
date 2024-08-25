@@ -28,6 +28,53 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('.video-control');
+    
+    const manageVideoPlayback = (entries, observer) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+            if (!entry.isIntersecting && !video.paused) {
+                video.pause(); // Pause video if it's out of the viewport
+                console.log('Video paused because it left the viewport.');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(manageVideoPlayback, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Adjust based on how much of the video needs to be visible
+    });
+
+    videos.forEach(video => {
+        observer.observe(video);
+
+        // Listen for the play event to allow user-initiated playback
+        video.addEventListener('play', (event) => {
+            // Ensure the video plays only if it's in the viewport
+            const isVisible = observer.thresholds.some(threshold => threshold === 1.0 && entry.isIntersecting);
+            if (!isVisible) {
+                video.pause();
+                console.log('Video playback prevented because it is not in view.');
+            }
+        });
+
+        // Prevent video from going fullscreen automatically
+        video.addEventListener('fullscreenchange', (event) => {
+            if (!document.fullscreenElement) {
+                return; // Exit if already out of fullscreen
+            }
+            const userPermitted = confirm('Do you want to allow fullscreen?');
+            if (!userPermitted) {
+                document.exitFullscreen();
+                console.log('Fullscreen was not permitted by the user.');
+            }
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
     const dropdownButton = document.getElementById('dropdown-button');
     const dropdownContent = document.getElementById('dropdown-content');
     const cancelButton = document.getElementById('cancel-button');
