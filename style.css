@@ -425,12 +425,39 @@ video {
 
 .cont {
     background-color: rgb(0, 0, 0);
-    height: 80vh;
+    height: 100vh;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.srch {
+    font-family: font1;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.mail {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: #888686;
+}
+
+.grg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.mail a {
+    color: white;
+    text-decoration: none;
 }
 
 footer {
@@ -439,4 +466,19 @@ footer {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+}
+
+@font-face {
+    font-family: font2;
+    src: url(/static/BelieveIt-DvLE.ttf);
+}
+
+@font-face {
+    font-family: font1;
+    src: url(/static/Poppins-Regular.ttf);
+}
+
+.fund {
+    font-family: font2;
+    font-size: 22px;
 }
