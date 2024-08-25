@@ -168,3 +168,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => observer.observe(section));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+  
+    const options = {
+      threshold: 0.5, // Adjust this threshold as needed (50% visibility)
+    };
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = +counter.getAttribute("data-target");
+          const speed = 100; // Adjust this value to control the speed of counting
+  
+          const updateCount = () => {
+            const currentCount = +counter.innerText;
+            const increment = Math.ceil(target / speed);
+  
+            if (currentCount < target) {
+              counter.innerText = currentCount + increment;
+              setTimeout(updateCount, 20); // Adjust the interval as needed
+            } else {
+              counter.innerText = target; // Ensure it stops at the target
+            }
+          };
+  
+          updateCount();
+          observer.unobserve(counter); // Unobserve the element after animation is complete
+        }
+      });
+    }, options);
+  
+    counters.forEach(counter => observer.observe(counter));
+  });
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".countter");
+  
+    const options = {
+      threshold: 0.5, // Adjust this threshold as needed (50% visibility)
+    };
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = +counter.getAttribute("data-target"); // Get the target number without the '%' sign
+          const speed = 100; // Adjust this value to control the speed of counting
+  
+          const updateCount = () => {
+            const currentCount = +counter.innerText.replace('%', ''); // Remove '%' for calculation
+            const increment = Math.ceil(target / speed);
+  
+            if (currentCount < target) {
+              counter.innerText = currentCount + increment;
+              setTimeout(updateCount, 20); // Adjust the interval as needed
+            } else {
+              counter.innerText = target; // Ensure it stops at the target
+            }
+  
+            // Append "%" sign after the number
+            counter.innerText = `${counter.innerText}%`;
+          };
+  
+          updateCount();
+          observer.unobserve(counter); // Unobserve the element after animation is complete
+        }
+      });
+    }, options);
+  
+    counters.forEach(counter => observer.observe(counter));
+  });
+  
