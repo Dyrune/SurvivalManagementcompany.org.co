@@ -1,23 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Dropdown logic
     const dropdownButton = document.getElementById('dropdown-button');
     const dropdownContent = document.getElementById('dropdown-content');
     const cancelButton = document.getElementById('cancel-button');
 
-    // Show dropdown content when dropdown button is clicked
     dropdownButton.addEventListener('click', () => {
         dropdownContent.classList.remove('hidden');
         dropdownContent.classList.add('visible');
         dropdownButton.style.display = 'none';
     });
 
-    // Hide dropdown content when cancel button is clicked
     cancelButton.addEventListener('click', () => {
         dropdownContent.classList.remove('visible');
         dropdownContent.classList.add('hidden');
         dropdownButton.style.display = 'block';
     });
 
-    // Optional: Close dropdown if clicking outside of it
     document.addEventListener('click', (event) => {
         if (!dropdownContent.contains(event.target) && !dropdownButton.contains(event.target)) {
             dropdownContent.classList.remove('visible');
@@ -25,115 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdownButton.style.display = 'block';
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const videos = document.querySelectorAll('.video-control');
-    
-    const manageVideoPlayback = (entries, observer) => {
-        entries.forEach(entry => {
-            const video = entry.target;
-            if (!entry.isIntersecting && !video.paused) {
-                video.pause(); // Pause video if it's out of the viewport
-                console.log('Video paused because it left the viewport.');
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(manageVideoPlayback, {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1 // Adjust based on how much of the video needs to be visible
-    });
-
-    videos.forEach(video => {
-        observer.observe(video);
-
-        // Listen for the play event to allow user-initiated playback
-        video.addEventListener('play', (event) => {
-            // Ensure the video plays only if it's in the viewport
-            const isVisible = observer.thresholds.some(threshold => threshold === 1.0 && entry.isIntersecting);
-            if (!isVisible) {
-                video.pause();
-                console.log('Video playback prevented because it is not in view.');
-            }
-        });
-
-        // Prevent video from going fullscreen automatically
-        video.addEventListener('fullscreenchange', (event) => {
-            if (!document.fullscreenElement) {
-                return; // Exit if already out of fullscreen
-            }
-            const userPermitted = confirm('Do you want to allow fullscreen?');
-            if (!userPermitted) {
-                document.exitFullscreen();
-                console.log('Fullscreen was not permitted by the user.');
-            }
-        });
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const dropdownButton = document.getElementById('dropdown-button');
-    const dropdownContent = document.getElementById('dropdown-content');
-    const cancelButton = document.getElementById('cancel-button');
-
-    dropdownButton.addEventListener('click', () => {
-        console.log('Dropdown button clicked');
-        dropdownContent.classList.add('visible');
-        dropdownButton.style.display = 'none';
-    });
-
-    cancelButton.addEventListener('click', () => {
-        console.log('Cancel button clicked');
-        dropdownContent.classList.remove('visible');
-        dropdownButton.style.display = 'block';
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-const slides = document.querySelector('.slides');
-const slideElements = document.querySelectorAll('.slide');
-const totalSlides = slideElements.length;
-let currentIndex = 0;
-
-function showSlide(index) {
-    if (index >= totalSlides) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = totalSlides - 1;
-    } else {
-        currentIndex = index;
-    }
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-document.querySelector('.next').addEventListener('click', () => {
-    showSlide(currentIndex + 1);
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-    showSlide(currentIndex - 1);
-});
-
-// Optionally, auto-slide every 3 seconds
-setInterval(() => {
-    showSlide(currentIndex + 1);
-}, 3000);
-
-
-})
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelector('.sliddes');
-    const slideElements = document.querySelectorAll('.slidde');
+    // Slider logic
+    const slides = document.querySelector('.slides');
+    const slideElements = document.querySelectorAll('.slide');
     const totalSlides = slideElements.length;
     let currentIndex = 0;
-    
+
     function showSlide(index) {
-        // Ensure index is within bounds
         if (index >= totalSlides) {
             currentIndex = 0;
         } else if (index < 0) {
@@ -141,137 +38,133 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             currentIndex = index;
         }
-        
-        // Move slides
         slides.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
-    
-    document.querySelector('.nect').addEventListener('click', () => {
+
+    document.querySelector('.next').addEventListener('click', () => {
         showSlide(currentIndex + 1);
     });
-    
-    document.querySelector('.priv').addEventListener('click', () => {
+
+    document.querySelector('.prev').addEventListener('click', () => {
         showSlide(currentIndex - 1);
     });
-    
-    // Auto-slide every 3 seconds
+
     setInterval(() => {
         showSlide(currentIndex + 1);
+    }, 3000);
+
+    // Testimonies slider logic
+    const testimoniesSlides = document.querySelector('.sliddes');
+    const testimoniesSlideElements = document.querySelectorAll('.slidde');
+    const totalTestimoniesSlides = testimoniesSlideElements.length;
+    let testimoniesIndex = 0;
+
+    function showTestimoniesSlide(index) {
+        if (index >= totalTestimoniesSlides) {
+            testimoniesIndex = 0;
+        } else if (index < 0) {
+            testimoniesIndex = totalTestimoniesSlides - 1;
+        } else {
+            testimoniesIndex = index;
+        }
+        testimoniesSlides.style.transform = `translateX(-${testimoniesIndex * 100}%)`;
+    }
+
+    document.querySelector('.nect').addEventListener('click', () => {
+        showTestimoniesSlide(testimoniesIndex + 1);
+    });
+
+    document.querySelector('.priv').addEventListener('click', () => {
+        showTestimoniesSlide(testimoniesIndex - 1);
+    });
+
+    setInterval(() => {
+        showTestimoniesSlide(testimoniesIndex + 1);
     }, 10000);
 
-})
-    document.addEventListener('DOMContentLoaded', () => {
-        let index = 0;
-        const videos = document.querySelector('.videos');
-        const videoElements = Array.from(videos.children);
-        const videoCount = videoElements.length;
-    
-        const updateCarousel = () => {
-            const offset = -index * 100;
-            videos.style.transform = `translateX(${offset}%)`;
-            playCurrentVideo();
-        };
-    
-        const playCurrentVideo = () => {
-            videoElements.forEach((video, idx) => {
-                if (idx === index) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
-        };
-    
-        const nextVideo = () => {
-            index = (index + 1) % videoCount;
-            updateCarousel();
-        };
-    
-        const prevVideo = () => {
-            index = (index - 1 + videoCount) % videoCount;
-            updateCarousel();
-        };
-    
-        const handleScroll = () => {
-            const currentVideo = videoElements[index];
-            const rect = currentVideo.getBoundingClientRect();
-            const inViewport = rect.left < window.innerWidth && rect.right > 0;
-            if (inViewport) {
-                currentVideo.play();
-            } else {
-                currentVideo.pause();
-            }
-        };
-    
-        const handleVideoEnd = () => {
-            nextVideo();
-        };
-    
-        videoElements.forEach(video => {
-            video.addEventListener('ended', handleVideoEnd);
-        });
-    
-        window.addEventListener('resize', handleScroll);
-        window.addEventListener('scroll', handleScroll);
-    
-        // Initial call to handle video visibility
-        handleScroll();
-    });
-    
+    // Video carousel logic
+    let videoIndex = 0;
+    const videos = document.querySelector('.videos');
+    const videoElements = Array.from(videos.children);
+    const videoCount = videoElements.length;
 
-    document.addEventListener("DOMContentLoaded", function () {
-      // Get all anchor links inside the 'contenttt' class
-      const contentLinks = document.querySelectorAll(".contenttt a");
-  
-      // Add click event listener to each link
-      contentLinks.forEach(function (link) {
-        link.addEventListener("click", function (event) {
-          // Prevent the default click action
-          event.preventDefault();
-  
-          // Get the href attribute of the clicked link (this is the target ID)
-          const targetId = this.getAttribute("href");
-  
-          // Scroll to the target element smoothly
-          document.querySelector(targetId).scrollIntoView({
-            behavior: "smooth"
-          });
-  
-          // Update active class on click
-          setActiveLink(targetId);
+    function updateCarousel() {
+        const offset = -videoIndex * 100;
+        videos.style.transform = `translateX(${offset}%)`;
+        playCurrentVideo();
+    }
+
+    function playCurrentVideo() {
+        videoElements.forEach((video, idx) => {
+            if (idx === videoIndex) {
+                video.play();
+            } else {
+                video.pause();
+            }
         });
-      });
-  
-      // Function to set the active link
-      function setActiveLink(targetId) {
-        contentLinks.forEach(function (link) {
-          link.classList.remove("active");
+    }
+
+    function nextVideo() {
+        videoIndex = (videoIndex + 1) % videoCount;
+        updateCarousel();
+    }
+
+    function prevVideo() {
+        videoIndex = (videoIndex - 1 + videoCount) % videoCount;
+        updateCarousel();
+    }
+
+    document.querySelector('.controls button:nth-of-type(1)').addEventListener('click', prevVideo);
+    document.querySelector('.controls button:nth-of-type(2)').addEventListener('click', nextVideo);
+
+    function handleScroll() {
+        const currentVideo = videoElements[videoIndex];
+        const rect = currentVideo.getBoundingClientRect();
+        const inViewport = rect.left < window.innerWidth && rect.right > 0;
+        if (inViewport) {
+            currentVideo.play();
+        } else {
+            currentVideo.pause();
+        }
+    }
+
+    window.addEventListener('resize', handleScroll);
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial call to handle video visibility
+    handleScroll();
+
+    // Smooth scrolling and active link logic
+    const contentLinks = document.querySelectorAll('.contenttt a');
+    
+    contentLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            setActiveLink(targetId);
         });
+    });
+
+    function setActiveLink(targetId) {
+        contentLinks.forEach(link => link.classList.remove('active'));
         const activeLink = document.querySelector(`.contenttt a[href='${targetId}']`);
         if (activeLink) {
-          activeLink.classList.add("active");
+            activeLink.classList.add('active');
         }
-      }
-  
-      // Intersection Observer to update the active link on scroll
-      const sections = document.querySelectorAll("section");
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.6 // 60% of the section should be visible for it to be considered active
-      };
-  
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.getAttribute("id");
-            setActiveLink(`#${sectionId}`);
-          }
+    }
+
+    const sections = document.querySelectorAll('section');
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.6 };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.getAttribute('id');
+                setActiveLink(`#${sectionId}`);
+            }
         });
-      }, observerOptions);
-  
-      sections.forEach(function (section) {
-        observer.observe(section);
-      });
-    });
-  
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+});

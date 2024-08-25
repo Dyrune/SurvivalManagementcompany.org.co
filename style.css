@@ -6,6 +6,10 @@ body {
     margin: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 .yuy {
     background-image:linear-gradient(to bottom, rgb(19, 18, 18),rgba(66, 63, 63, 0.425) 50%), url(/background/istockphoto-1424987910-612x612.jpg);
     background-repeat: no-repeat;
@@ -186,6 +190,8 @@ body {
 
 .slider {
     width: 98%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .duction {
@@ -400,6 +406,21 @@ video {
     justify-content: center;
     text-align: center;
     font-size: 26px;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 20px;
+}
+
+.linkss {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: 007bff;
 }
 
 .cont {
