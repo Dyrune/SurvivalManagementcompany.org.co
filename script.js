@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     
     function showSlide(index) {
+        // Ensure index is within bounds
         if (index >= totalSlides) {
             currentIndex = 0;
         } else if (index < 0) {
@@ -73,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             currentIndex = index;
         }
+        
+        // Move slides
         slides.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
     
@@ -84,13 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentIndex - 1);
     });
     
-    // Optionally, auto-slide every 3 seconds
+    // Auto-slide every 3 seconds
     setInterval(() => {
         showSlide(currentIndex + 1);
     }, 10000);
-    
-    
-    })
+
+})
     document.addEventListener('DOMContentLoaded', () => {
         let index = 0;
         const videos = document.querySelector('.videos');
@@ -149,3 +151,60 @@ document.addEventListener('DOMContentLoaded', () => {
         handleScroll();
     });
     
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all anchor links inside the 'contenttt' class
+      const contentLinks = document.querySelectorAll(".contenttt a");
+  
+      // Add click event listener to each link
+      contentLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          // Prevent the default click action
+          event.preventDefault();
+  
+          // Get the href attribute of the clicked link (this is the target ID)
+          const targetId = this.getAttribute("href");
+  
+          // Scroll to the target element smoothly
+          document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth"
+          });
+  
+          // Update active class on click
+          setActiveLink(targetId);
+        });
+      });
+  
+      // Function to set the active link
+      function setActiveLink(targetId) {
+        contentLinks.forEach(function (link) {
+          link.classList.remove("active");
+        });
+        const activeLink = document.querySelector(`.contenttt a[href='${targetId}']`);
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+      }
+  
+      // Intersection Observer to update the active link on scroll
+      const sections = document.querySelectorAll("section");
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.6 // 60% of the section should be visible for it to be considered active
+      };
+  
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute("id");
+            setActiveLink(`#${sectionId}`);
+          }
+        });
+      }, observerOptions);
+  
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    });
+  

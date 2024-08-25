@@ -36,34 +36,49 @@ body {
         /* Dropdown button styling */
         .dropdown-button {
             cursor: pointer;
-            background-color: white;
             margin: 30px;
+            position: fixed;
+            background-color: white;
         }
 
         /* Dropdown content styling */
         .dropdown-content {
             flex-direction: column;
             background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 10px;
+            border: 1px solid #faf8f8;
             z-index: 1;
+            box-shadow: 3px 3px 15px black;
             right: 0;
-            width: 28vh;
+            width: 60%;
+            padding: 15px;
+            top: 0;
+            position: fixed;
             height: 100%;
+            max-height: 100%;
+        }
+
+        .contenttt {
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .dropdown div:first-child {
+            padding: 5px;
+            justify-content: right;
+            display: flex;
         }
 
         /* Cancel button styling */
         .cancle-button {
-            cursor: pointer;
-            padding: 5px;
+            padding: 15px;
             justify-content: right;
             display: flex;
-            margin: 10px;
         }
 
         .cancle-button img {
             width: 30px; /* Adjust size as needed */
             height: auto;
+            position: fixed;
         }
 
         @font-face {
@@ -78,34 +93,47 @@ body {
 
         .iccc {
             margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
         }
 
         .iccc img {
-            background-color: black;
-            width: 50px;
+            background-color: rgb(4, 48, 4);
+            width: 40px;
             margin: 10px;
-            border-radius: 15px;
+            border-radius: 5px;
         }
-
+/* Style for the active link */
+.contenttt a.active {
+    text-shadow: 5px 5px 15px rgb(4, 48, 4);
+    color: rgb(4, 48, 4); /* Optional: change text color for better visibility */
+  }
+  
         .Vision {
-            font-size: 18px;
+            font-size: 14px;
             padding: 8px;
             color: #888686;
-            font-family: text;
-            margin-top: 20px;
+            cursor: default;
+            font-family: yay;
         }
 
         .dropdown-content a {
             display: block;
             font-family: jay;
             padding: 8px;
-            margin-top: 15px;
             text-decoration: none;
             color: #333;
-            font-size: 22px;
+            font-size: 18px;
+            border-radius: 10px;
         }
 
-        .dropdown-content a:hover {
+        .contenttt a:hover {
+            text-shadow: 1px 1px 3px rgb(4, 48, 4);
+            background-color: #ddd;
+        }
+
+        .info a:hover {
+            text-shadow: 1px 1px 3px rgb(4, 48, 4);
             background-color: #ddd;
         }
 
