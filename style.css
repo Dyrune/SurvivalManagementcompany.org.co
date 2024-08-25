@@ -369,7 +369,28 @@ video {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     font-weight: bold;
-    text-shadow: 1px 1px 5px green;
+    text-shadow: 1px 1px 5px rgb(4, 48, 4);
+}
+
+.co {
+    padding: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 24px;
+    text-shadow: 3px 3px 3px rgb(236, 6, 6);
+}
+
+.gref {
+    margin-bottom: 15px;
+}
+
+.coco a {
+    text-decoration: none;
+    color: white;
+}
+
+.coco a:hover {
+    color: blue;
 }
 
 .cont div {
