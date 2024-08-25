@@ -75,6 +75,9 @@ body {
     justify-content: right;
     display: flex;
 }
+.videos {
+    margin-top: 60px;
+}
 
 .cancel-button img {
     width: 30px; /* Adjust size as needed */

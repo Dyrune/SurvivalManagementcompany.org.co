@@ -27,6 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownButton = document.getElementById('dropdown-button');
+    const dropdownContent = document.getElementById('dropdown-content');
+    const cancelButton = document.getElementById('cancel-button');
+
+    dropdownButton.addEventListener('click', () => {
+        console.log('Dropdown button clicked');
+        dropdownContent.classList.add('visible');
+        dropdownButton.style.display = 'none';
+    });
+
+    cancelButton.addEventListener('click', () => {
+        console.log('Cancel button clicked');
+        dropdownContent.classList.remove('visible');
+        dropdownButton.style.display = 'block';
+    });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
 const slides = document.querySelector('.slides');
