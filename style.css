@@ -302,6 +302,7 @@ html, body {
     border: none;
     height: 30px;
 }
+
 .priv, .nect {
     font-family: jay;
     width: 100px;
@@ -450,7 +451,6 @@ video {
 .srch {
     font-family: font1;
     font-size: 18px;
-    padding: 10px;
 }
 
 .mail {
@@ -461,17 +461,27 @@ video {
     background-color: #888686;
 }
 
+.jhh {
+    padding: 30px;
+    width: 90%;
+}
+
 .grg {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     flex-direction: column;
 }
 
 .mail a {
     color: white;
     text-decoration: none;
+}
+
+.gr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
