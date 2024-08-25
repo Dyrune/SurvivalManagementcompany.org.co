@@ -1,29 +1,32 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const dropdownButton = document.getElementById('dropdown-button');
     const dropdownContent = document.getElementById('dropdown-content');
-    const cancelButton = document.getElementById('cancle-button');
+    const cancelButton = document.getElementById('cancel-button');
 
     // Show dropdown content when dropdown button is clicked
     dropdownButton.addEventListener('click', () => {
-        dropdownContent.style.display = 'flex';
+        dropdownContent.classList.remove('hidden');
+        dropdownContent.classList.add('visible');
         dropdownButton.style.display = 'none';
     });
 
     // Hide dropdown content when cancel button is clicked
     cancelButton.addEventListener('click', () => {
-        dropdownContent.style.display = 'none';
+        dropdownContent.classList.remove('visible');
+        dropdownContent.classList.add('hidden');
         dropdownButton.style.display = 'block';
     });
 
     // Optional: Close dropdown if clicking outside of it
     document.addEventListener('click', (event) => {
         if (!dropdownContent.contains(event.target) && !dropdownButton.contains(event.target)) {
-            dropdownContent.style.display = 'none';
+            dropdownContent.classList.remove('visible');
+            dropdownContent.classList.add('hidden');
             dropdownButton.style.display = 'block';
         }
     });
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
 const slides = document.querySelector('.slides');

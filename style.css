@@ -27,110 +27,123 @@ body {
     font-family: jay;
 }
 
-        /* Style for dropdown wrapper */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+  /* Style for dropdown wrapper */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        /* Dropdown button styling */
-        .dropdown-button {
-            cursor: pointer;
-            margin: 30px;
-            position: fixed;
-            background-color: white;
-        }
+/* Dropdown button styling */
+.dropdown-button {
+    cursor: pointer;
+    margin: 30px;
+    position: fixed;
+    background-color: white;
+}
 
-        /* Dropdown content styling */
-        .dropdown-content {
-            flex-direction: column;
-            background-color: #f9f9f9;
-            border: 1px solid #faf8f8;
-            z-index: 1;
-            box-shadow: 3px 3px 15px black;
-            right: 0;
-            width: 60%;
-            padding: 15px;
-            top: 0;
-            position: fixed;
-            height: 120%;
-            max-height: 120%;
-        }
+/* Dropdown content styling */
+.dropdown-content {
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border: 1px solid #faf8f8;
+    z-index: 1;
+    box-shadow: 3px 3px 15px black;
+    right: 0;
+    width: 60%;
+    padding: 15px;
+    top: 0;
+    position: fixed;
+    height: 120%;
+    max-height: 120%;
+    display: none; /* Hide by default */
+}
 
-        .contenttt {
-            margin-top: 35px;
-            margin-bottom: 15px;
-        }
+.contenttt {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
 
-        .dropdown div:first-child {
-            padding: 5px;
-            justify-content: right;
-            display: flex;
-        }
+.dropdown div:first-child {
+    padding: 5px;
+    justify-content: right;
+    display: flex;
+}
 
-        /* Cancel button styling */
-        .cancle-button {
-            padding: 15px;
-            justify-content: right;
-            display: flex;
-        }
+/* Cancel button styling */
+.cancel-button {
+    padding: 15px;
+    justify-content: right;
+    display: flex;
+}
 
-        .cancle-button img {
-            width: 30px; /* Adjust size as needed */
-            height: auto;
-            position: fixed;
-        }
+.cancel-button img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    position: fixed;
+}
 
-        @font-face {
-            font-family: jay;
-            src: url(/static/Platypi-SemiBoldItalic.ttf);
-        }
+@font-face {
+    font-family: jay;
+    src: url(/static/Platypi-SemiBoldItalic.ttf);
+}
 
-        @font-face {
-            font-family: text;
-            src: url(/static/Platypi-Regular.ttf);
-        }
+@font-face {
+    font-family: text;
+    src: url(/static/Platypi-Regular.ttf);
+}
 
-        .iccc {
-            margin-top: 30px;
-            margin-bottom: 20px;
-            display: flex;
-        }
+.iccc {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+}
 
-        .iccc img {
-            background-color: rgb(4, 48, 4);
-            width: 40px;
-            margin: 10px;
-            border-radius: 5px;
-        }
+.iccc img {
+    background-color: rgb(4, 48, 4);
+    width: 40px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
 /* Style for the active link */
 .contenttt a.active {
     text-shadow: 5px 5px 15px rgb(4, 48, 4);
     color: rgb(4, 48, 4); /* Optional: change text color for better visibility */
-  }
-  
-        .Vision {
-            font-size: 14px;
-            padding: 8px;
-            color: #888686;
-            cursor: default;
-            font-family: yay;
-        }
+}
 
-        .dropdown-content a {
-            display: block;
-            font-family: jay;
-            padding: 8px;
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
-            border-radius: 10px;
-        }
+.Vision {
+    font-size: 14px;
+    padding: 8px;
+    color: #888686;
+    cursor: default;
+    font-family: yay;
+}
 
-        .contenttt a:hover {
-            text-shadow: 1px 1px 3px rgb(4, 48, 4);
-            background-color: #ddd;
-        }
+.dropdown-content a {
+    display: block;
+    font-family: jay;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.contenttt a:hover {
+    text-shadow: 1px 1px 3px rgb(4, 48, 4);
+    background-color: #ddd;
+}
+
+/* Hidden class to hide elements */
+.hidden {
+    display: none;
+}
+
+/* Visible class to show elements */
+.visible {
+    display: flex;
+}
+
 
         .info a:hover {
             text-shadow: 1px 1px 3px rgb(4, 48, 4);
