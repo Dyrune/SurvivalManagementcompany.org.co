@@ -288,11 +288,6 @@ html, body {
     align-items: center;
 }
 
-.next {
-    margin-right: 20px;
-}
-
-
 .prev, .next {
     font-family: jay;
     background-color: transparent;
