@@ -370,10 +370,7 @@ video {
 }
 
 .sec7 div {
-    padding: 25px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    text-shadow: 1px 1px 5px rgb(4, 48, 4);
+    padding: 20px;
 }
 
 .sec8 {
@@ -392,6 +389,12 @@ video {
     text-align: center;
     font-size: 44px;
     text-shadow: 3px 3px 6px #228B22;
+}
+
+.co {
+    float: left;
+    width: 100%;
+    padding: 30px;
 }
 
 .co:hover {
@@ -419,16 +422,14 @@ video {
 .cont div {
     flex-direction: column;
     display: flex;
-    justify-content: center;
-    text-align: center;
     font-size: 26px;
+    width: 100%;
 }
 
 .link {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
     margin: 20px;
 }
 
@@ -436,10 +437,29 @@ video {
     font-size: 20px;
 }
 
+
 .link a {
     text-decoration: none;
     font-size: 20px;
     color: white;
+}
+
+.coco {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    text-align: left;
+}
+
+.coco a {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    text-align: left;
+    font-size: 22px;
+    padding: 5px;
+    Color: white;
+    text-shadow: 0px 3px 0px green;
 }
 
 .link a:hover{
@@ -455,7 +475,7 @@ video {
 
 .cont {
     background-color: rgb(0, 0, 0);
-    height: 70vh;
+    height: 75vh;
     color: white;
     padding: 30px;
     display: flex;
@@ -466,22 +486,26 @@ video {
 }
 
 .srch {
-    font-family: font1;
-    font-size: 18px;
+    font-family: gug;
+    font-weight: bolder;
+    font-size: 38px;
 }
 
 .mail {
-    width: 120px;
-    height: 40px;
+    width: 200px;
+    height: 60px;
     border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: transparent;
-    background-color: #888686;
-    box-shadow: 2px 2px 5px rgb(4, 65, 4);
-    margin-top: 15px;
+    background-color: transparent;
+    box-shadow: 2px 2px 5px #062e06;
+    margin-top: 30px;
+    font-weight: bolder;
+    font-size: 24px;
 }
 
 .jhh {
-    padding: 30px;
+    padding: 18px;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -496,14 +520,13 @@ video {
 }
 
 .mail a {
-    color: white;
     text-decoration: none;
+    color: black;
 }
 
 .gr {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 footer {
@@ -514,25 +537,14 @@ footer {
     justify-content: center;
 }
 
-@font-face {
-    font-family: font2;
-    src: url(/static/BelieveIt-DvLE.ttf);
-}
-
-@font-face {
-    font-family: font1;
-    src: url(/static/Poppins-Regular.ttf);
-}
-
 .fund {
-    font-family: font2;
     font-size: 22px;
 }
 
 .usscont button {
     float: right;
     width: 150px;
-    border: 1px solid black;
+    border: 1px solid #228B22;
     box-shadow: 1px 1px 5px #228B22;
     height: 50px;
     border-radius: 10px;
@@ -549,12 +561,68 @@ footer {
     font-weight: bold;
 }
 
+.duction {
+    font-size: 54px;
+
+}
+
+.impacts div {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+}
+
+.fund {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .countter {
     display: inline-block;
+    font-weight: bolder;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 0 3px 0 #228B22;
     font-size: 2rem;
 }
 
 .counter {
+    font-weight: bolder;
     display: inline-block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 0 3px 0 #228B22;
     font-size: 2rem;
+}
+
+@font-face {
+    font-family: font1;
+    src: url(/static/ArianaVioleta-dz2K.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(/static/BeckyTahlia-MP6r.ttf);
+}
+
+@font-face {
+    font-family: font3;
+    src: url(/static/BelieveIt-DvLE.ttf);
+}
+
+@font-face {
+    font-family: font4;
+    src: url(/static/WinterSong-owRGB.ttf);
+}
+
+@font-face {
+    font-family: font5;
+    src: url(/static/Newretrostyle3d-ygjm.ttf);
+}
+
+.usscont h2, .co {
+    font-size: 24px;
+    text-shadow: 1px 2px 2px #228B22;
+}
+
+.usscont div {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
