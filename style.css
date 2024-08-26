@@ -538,7 +538,8 @@ footer {
 }
 
 .fund {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .usscont button {
@@ -570,6 +571,7 @@ footer {
 .impacts div {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: lighter;
+    font-size: 22px;
 }
 
 .fund {
