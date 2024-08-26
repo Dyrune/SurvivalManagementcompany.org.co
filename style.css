@@ -456,10 +456,10 @@ video {
     text-align: left;
     align-items: center;
     text-align: left;
-    font-size: 22px;
+    font-size: 18px;
     padding: 5px;
     Color: white;
-    text-shadow: 0px 3px 0px green;
+    text-shadow: 0px 3px 0px rgb(239, 243, 239);
 }
 
 .link a:hover{
@@ -488,7 +488,7 @@ video {
 .srch {
     font-family: gug;
     font-weight: bolder;
-    font-size: 38px;
+    font-size: 32px;
 }
 
 .mail {
@@ -496,9 +496,9 @@ video {
     height: 60px;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border: transparent;
+    border: 1px solid rgb(106, 109, 106);
     background-color: transparent;
-    box-shadow: 2px 2px 5px #062e06;
+    box-shadow: 2px 2px 5px #d9dbd9;
     margin-top: 30px;
     font-weight: bolder;
     font-size: 24px;
@@ -538,7 +538,7 @@ footer {
 }
 
 .fund {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .usscont button {
@@ -549,6 +549,7 @@ footer {
     height: 50px;
     border-radius: 10px;
 }
+
 
 .usscont div button a {
     text-decoration: none;
@@ -622,7 +623,7 @@ footer {
 }
 
 .usscont div {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
